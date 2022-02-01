@@ -1,0 +1,42 @@
+jar {   
+   from('src/main/java') {
+      include 'com/opentext/otmm/sc/api/jaxb.properties'
+   }     
+   archiveFileName = "${rootProject.name}-${project.name}-${archiveVersion.get()}.jar"
+}
+
+dependencies {
+	implementation fileTree(dir: '../lib', include: '*.jar')
+	implementation project(':core')
+	
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
+	implementation 'io.swagger.core.v3:swagger-annotations:2.1.12'
+	// NOTE: Vulnerabilities from dependencies: CVE-2021-42550 CVE-2021-29425 CVE-2020-8908
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core
+	implementation 'io.swagger.core.v3:swagger-core:2.1.6'
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-integration
+	implementation 'io.swagger.core.v3:swagger-integration:2.1.6'
+	// NOTE: Vulnerabilities from dependencies: CVE-2021-42550 CVE-2021-29425
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-jaxrs2
+	implementation 'io.swagger.core.v3:swagger-jaxrs2:2.1.6'
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
+	implementation 'io.swagger.core.v3:swagger-models:2.1.6'	
+	
+	// NOTE: Vulnerabilities from dependencies: CVE-2020-15250 (https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15250)
+	// https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api
+	implementation 'javax.ws.rs:javax.ws.rs-api:2.1.1'
+
+	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compileOnly 'javax.servlet:javax.servlet-api:3.0.1'	
+	
+    // NOTE: Setup Basic REST Assured Gradle Project In Eclipse IDE
+    // https://qaautomation.expert/2021/05/21/setup-basic-rest-assured-gradle-project-in-eclipse-ide/
+    //
+	// https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+	testImplementation 'io.rest-assured:rest-assured:4.3.3'	
+	// NOTE: Vulnerabilities from dependencies: CVE-2019-10172
+	// https://mvnrepository.com/artifact/io.rest-assured/json-path
+	testImplementation 'io.rest-assured:json-path:4.3.3'
+	// https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator
+	testImplementation 'io.rest-assured:json-schema-validator:4.3.3'	
+}

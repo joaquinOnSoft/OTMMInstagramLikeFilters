@@ -1,0 +1,34 @@
+// Tested with gradle 7.3.3
+//
+// GRADLE tutorial:
+//
+// Getting Started With Gradle: Creating a Multi-Project Build
+// https://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-creating-a-multi-project-build/
+//
+// Getting Started With Gradle 
+// https://github.com/pkainulainen/gradle-examples
+subprojects {
+    apply plugin: 'java'
+
+	version = '21.02.01.18.26' 
+
+	java {
+	    sourceCompatibility = JavaVersion.VERSION_11
+	    targetCompatibility = JavaVersion.VERSION_11
+	}
+	
+    repositories {
+        mavenCentral()
+    }
+    
+	dependencies {
+		// NOTE: Vulnerabilities from dependencies: CVE-2021-4104 CVE-2019-17571
+		// https://mvnrepository.com/artifact/commons-logging/commons-logging
+		implementation 'commons-logging:commons-logging:1.2'
+		
+	    implementation fileTree(dir: 'lib', include: '*.jar')
+	
+	    // Use JUnit test framework
+	    testImplementation 'junit:junit:4.12'	 
+	}    
+}

@@ -1,0 +1,15 @@
+jar {   
+	archiveFileName = "${rootProject.name}-${project.name}-${archiveVersion.get()}.jar"
+}
+
+dependencies {
+	implementation fileTree(dir: '../lib', include: '*.jar')
+	implementation project(':core')
+	
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.2'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.11.2'
+	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.2'	
+}
