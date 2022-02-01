@@ -7,7 +7,7 @@
 
 ## Steps to deploy a custom REST API
 
-1. Package the REST API(s) as a jar for e.g., **OTMMInstagramLikeFilters-21.01.27.jar** and deploy it under the right location:
+1. Package the REST API(s) as a jar for e.g., **OTMMInstagramLikeFilters-api-21.02.02.jar** and deploy it under the right location:
 
 | Server       | Location                                             |
 |--------------|------------------------------------------------------|

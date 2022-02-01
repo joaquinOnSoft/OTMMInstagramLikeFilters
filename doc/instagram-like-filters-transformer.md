@@ -26,9 +26,10 @@ An OTMM transformers to create a preview for each filter
  ```
  
 ## Deploy the transformer JAR file
- 1. Copy the jar file, e.g. `OTMMInstagramLikeFilters-21.01.27.jar`, in the `plugin` directory of your OTMM instance.
+ 1. Copy the `core` and `transformer` jar file, e.g. `OTMMInstagramLikeFilters-core-21.02.02.jar` and `OTMMInstagramLikeFilters-transformer-21.02.02.jar`, in the `plugin` directory of your OTMM instance.
 ```
- C:\Apps\MediaManagement\plugins\OTMMInstagramLikeFilters-21.01.27.jar
+ C:\Apps\MediaManagement\plugins\OTMMInstagramLikeFilters-core-{version}.jar
+ C:\Apps\MediaManagement\plugins\OTMMInstagramLikeFilters-transformer-{version}.jar
 ``` 
  2. As administrator open a DOS window and navigate to
 ```
